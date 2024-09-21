@@ -192,7 +192,7 @@ if ($totalcount && !$program->archived && $canmanageevidence) {
     $link = new \local_openlms\output\dialog_form\link($url, get_string('evidenceupload', 'enrol_programs'));
     $extramenu->add_dialog_form($link);
 }
-\core\hook\manager::get_instance()->dispatch($extramenu);
+\core\di::get(\core\hook\manager::class)->dispatch($extramenu);
 
 echo '<div class="allocation-filtering">';
 // Add search form.
