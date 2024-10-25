@@ -27,13 +27,13 @@ defined('MOODLE_INTERNAL') || die();
 
 /** @var stdClass $plugin */
 
-$plugin->version   = 2024100200;
+$plugin->version   = 2024103100;
 $plugin->requires  = 2024091700.00; // 4.5.0
 $plugin->component = 'enrol_programs';
 $plugin->release   = 'v4.0.0dev';
 $plugin->supported = [405, 405];
 
 $plugin->dependencies = [
-    'local_openlms' => 2024091900,
+    'local_openlms' => 2024103100,
     'customfield_training' => 2024091900,
 ];
