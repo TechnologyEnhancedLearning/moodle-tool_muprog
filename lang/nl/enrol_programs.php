@@ -159,79 +159,109 @@ $string['moveinto'] = 'Verplaats "{$a->item}" naar "{$a->target}"';
 $string['myprograms'] = 'Mijn programma\'s';
 $string['notification_allocation'] = 'Gebruiker toegekend';
 $string['notification_allocation_subject'] = 'Melding programmatoewijzing';
-$string['notification_allocation_body'] = 'Hallo {$a->user_fullname},u bent toegewezen aan programma "{$a->program_fullname}", de startdatum is {$a->program_startdate}.
+$string['notification_allocation_body'] = 'Hallo {$a->user_fullname},
+
+u bent toegewezen aan programma "{$a->program_fullname}", de startdatum is {$a->program_startdate}.
 ';
 $string['notification_allocation_description'] = 'Melding verzonden naar gebruikers wanneer ze zijn toegewezen aan programma.';
 $string['notification_completion'] = 'Programma voltooid';
 $string['notification_completion_subject'] = 'Programma voltooid';
-$string['notification_completion_body'] = 'Hallo {$a->user_fullname},u hebt programma "{$a->program_fullname}" voltooid.
+$string['notification_completion_body'] = 'Hallo {$a->user_fullname},
+
+u hebt programma "{$a->program_fullname}" voltooid.
 ';
 $string['notification_completion_description'] = 'Melding verzonden naar gebruikers wanneer ze hun programma hebben voltooid.';
 $string['notification_completion_relateduser'] = 'Programma voltooid - gerelateerde gebruiker';
 $string['notification_completion_relateduser_subject'] = 'Gebruiker {$a->user_fullname} heeft programma voltooid';
-$string['notification_completion_relateduser_body'] = 'Hallo {$a->relateduser_fullname},gebruiker {$a->user_fullname} heeft programma "{$a->program_fullname}" voltooid.
+$string['notification_completion_relateduser_body'] = 'Hallo {$a->relateduser_fullname},
+
+gebruiker {$a->user_fullname} heeft programma "{$a->program_fullname}" voltooid.
 ';
 $string['notification_completion_relateduser_description'] = 'Melding verzonden naar gebruikers gerelateerd aan gebruiker wanneer ze hun programma hebben voltooid.';
 $string['notification_deallocation'] = 'Gebruiker uitgeschreven';
 $string['notification_deallocation_subject'] = 'Melding uitschrijving programma';
-$string['notification_deallocation_body'] = 'Hallo {$a->user_fullname},u bent uitgeschreven voor programma "{$a->program_fullname}".
+$string['notification_deallocation_body'] = 'Hallo {$a->user_fullname},
+
+u bent uitgeschreven voor programma "{$a->program_fullname}".
 ';
 $string['notification_deallocation_description'] = 'Melding verzonden naar gebruikers wanneer ze voor het programma zijn uitgeschreven.';
 $string['notification_duesoon'] = 'Binnenkort deadline programma bereikt';
 $string['notification_duesoon_subject'] = 'Voltooiing van het programma wordt binnenkort verwacht';
-$string['notification_duesoon_body'] = 'Hallo {$a->user_fullname},voltooiing van programma "{$a->program_fullname}" wordt verwacht op {$a->program_duedate}.
+$string['notification_duesoon_body'] = 'Hallo {$a->user_fullname},
+
+voltooiing van programma "{$a->program_fullname}" wordt verwacht op {$a->program_duedate}.
 ';
 $string['notification_duesoon_description'] = 'Melding verzonden naar gebruikers vóór de voltooiingsdatum van het programma, tenzij het programma al is voltooid.';
 $string['notification_duesoon_relateduser'] = 'Binnenkort deadline programma bereikt - gerelateerde gebruiker';
 $string['notification_duesoon_relateduser_subject'] = 'Voltooiing van programma wordt binnenkort verwacht voor gebruiker {$a->user_fullname}';
-$string['notification_duesoon_relateduser_body'] = 'Hallo {$a->relateduser_fullname},voltooiing van programma "{$a->program_fullname}" voor gebruiker {$a->user_fullname} wordt verwacht op {$a->program_duedate}.
+$string['notification_duesoon_relateduser_body'] = 'Hallo {$a->relateduser_fullname},
+
+voltooiing van programma "{$a->program_fullname}" voor gebruiker {$a->user_fullname} wordt verwacht op {$a->program_duedate}.
 ';
 $string['notification_duesoon_relateduser_description'] = 'Melding verzonden naar gebruikers gerelateerd aan gebruiker vóór de voltooiingsdatum van het programma, tenzij het programma al is voltooid.';
 $string['notification_due'] = 'Programma te laat';
 $string['notification_due_subject'] = 'Voltooiing van het programma werd verwacht';
-$string['notification_due_body'] = 'Hallo {$a->user_fullname},voltooiing van programma "{$a->program_fullname}" was verwacht vóór {$a->program_duedate}.
+$string['notification_due_body'] = 'Hallo {$a->user_fullname},
+
+voltooiing van programma "{$a->program_fullname}" was verwacht vóór {$a->program_duedate}.
 ';
 $string['notification_due_description'] = 'Melding verzonden naar gebruikers wanneer hun programma te laat is voltooid.';
 $string['notification_due_relateduser'] = 'Programma te laat - gerelateerde gebruiker';
 $string['notification_due_relateduser_subject'] = 'Voltooiing van programma werd verwacht voor gebruiker {$a->user_fullname}';
-$string['notification_due_relateduser_body'] = 'Hallo {$a->relateduser_fullname},voltooiing van programma "{$a->program_fullname}" voor gebruiker {$a->user_fullname} werd verwacht op {$a->program_duedate}.
+$string['notification_due_relateduser_body'] = 'Hallo {$a->relateduser_fullname},
+
+voltooiing van programma "{$a->program_fullname}" voor gebruiker {$a->user_fullname} werd verwacht op {$a->program_duedate}.
 ';
 $string['notification_due_relateduser_description'] = 'Melding verzonden naar gebruikers gerelateerd aan gebruiker wanneer hun programma te laat is voltooid.';
 $string['notification_endsoon'] = 'Binnenkort einddatum programma';
 $string['notification_endsoon_subject'] = 'Programma eindigt binnenkort';
-$string['notification_endsoon_body'] = 'Hallo {$a->user_fullname},programma "{$a->program_fullname}" eindigt op {$a->program_enddate}.
+$string['notification_endsoon_body'] = 'Hallo {$a->user_fullname},
+
+programma "{$a->program_fullname}" eindigt op {$a->program_enddate}.
 ';
 $string['notification_endsoon_description'] = 'Melding verzonden naar gebruikers vóór de einddatum van het programma, tenzij het programma al is voltooid.';
 $string['notification_endsoon_relateduser'] = 'Binnenkort einddatum programma - gerelateerde gebruiker';
 $string['notification_endsoon_relateduser_subject'] = 'Programma eindigt binnenkort voor gebruiker {$a->user_fullname}';
-$string['notification_endsoon_relateduser_body'] = 'Hallo {$a->relateduser_fullname},programma "{$a->program_fullname}" voor gebruiker {$a->user_fullname} eindigt op {$a->program_enddate}.
+$string['notification_endsoon_relateduser_body'] = 'Hallo {$a->relateduser_fullname},
+
+programma "{$a->program_fullname}" voor gebruiker {$a->user_fullname} eindigt op {$a->program_enddate}.
 ';
 $string['notification_endsoon_relateduser_description'] = 'Melding verzonden naar gebruikers gerelateerd aan gebruiker vóór de einddatum van het programma, tenzij het programma al is voltooid.';
 $string['notification_endcompleted'] = 'Voltooid programma beëindigd';
 $string['notification_endcompleted_subject'] = 'Voltooid programma beëindigd';
-$string['notification_endcompleted_body'] = 'Hallo {$a->user_fullname},programma "{$a->program_fullname}" is beëindigd, u hebt het eerder voltooid.
+$string['notification_endcompleted_body'] = 'Hallo {$a->user_fullname},
+
+programma "{$a->program_fullname}" is beëindigd, u hebt het eerder voltooid.
 ';
 $string['notification_endcompleted_description'] = 'Melding verzonden naar gebruikers wanneer hun voltooide programma eindigt.';
 $string['notification_endfailed'] = 'Mislukt programma beëindigd';
 $string['notification_endfailed_subject'] = 'Mislukt programma beëindigd';
-$string['notification_endfailed_body'] = 'Hallo {$a->user_fullname},programma "{$a->program_fullname}" is beëindigd, u hebt het niet voltooid.
+$string['notification_endfailed_body'] = 'Hallo {$a->user_fullname},
+
+programma "{$a->program_fullname}" is beëindigd, u hebt het niet voltooid.
 ';
 $string['notification_endfailed_description'] = 'Melding verzonden naar gebruikers wanneer het programma dat ze niet hebben voltooid, eindigt.';
 $string['notification_endfailed_relateduser'] = 'Beëindiging mislukt programma - gerelateerde gebruiker';
 $string['notification_endfailed_relateduser_subject'] = 'Beëindiging mislukt programma voor gebruiker {$a->user_fullname}';
-$string['notification_endfailed_relateduser_body'] = 'Hallo {$a->relateduser_fullname},programma "{$a->program_fullname}" is beëindigd en gebruiker {$a->user_fullname} heeft het niet voltooid.
+$string['notification_endfailed_relateduser_body'] = 'Hallo {$a->relateduser_fullname},
+
+programma "{$a->program_fullname}" is beëindigd en gebruiker {$a->user_fullname} heeft het niet voltooid.
 ';
 $string['notification_endfailed_relateduser_description'] = 'Melding verzonden naar gebruikers gerelateerd aan gebruiker wanneer het programma dat ze niet hebben voltooid, eindigt.';
 $string['notification_relateduserfield'] = 'Veld gerelateerde gebruiker melding';
 $string['notification_relateduserfield_desc'] = 'Selecteer het profielveld voor gerelateerde gebruikers dat moet worden gebruikt voor melding aan gerelateerde gebruikers.';
 $string['notification_reset'] = 'Voortgang gebruikers resetten';
 $string['notification_reset_subject'] = 'Resetmelding programma';
-$string['notification_reset_body'] = 'Hallo {$a->user_fullname},uw voortgang in programma "{$a->program_fullname}" is gereset.
+$string['notification_reset_body'] = 'Hallo {$a->user_fullname},
+
+uw voortgang in programma "{$a->program_fullname}" is gereset.
 ';
 $string['notification_reset_description'] = 'Melding verzonden naar gebruikers wanneer de voortgang van hun programma is gereset.';
 $string['notification_start'] = 'Programma gestart';
 $string['notification_start_subject'] = 'Programma gestart';
-$string['notification_start_body'] = 'Hallo {$a->user_fullname},programma "{$a->program_fullname}" is gestart.
+$string['notification_start_body'] = 'Hallo {$a->user_fullname},
+
+programma "{$a->program_fullname}" is gestart.
 ';
 $string['notification_start_description'] = 'Melding verzonden naar gebruikers wanneer hun programma is gestart.';
 $string['notificationdates'] = 'Meldingsdatums';
@@ -367,7 +397,11 @@ $string['source_approval_notification_approval_request_body'] = '
 Gebruiker {$a->user_fullname} heeft toegang aangevraagd tot programma "{$a->program_fullname}".
 ';
 $string['source_approval_notification_approval_reject_subject'] = 'Melding weigering aanvraag programma';
-$string['source_approval_notification_approval_reject_body'] = 'Hallo {$a->user_fullname},uw aanvraag voor toegang tot programma "{$a->program_fullname}" is afgewezen.{$a->reason}
+$string['source_approval_notification_approval_reject_body'] = 'Hallo {$a->user_fullname},
+
+uw aanvraag voor toegang tot programma "{$a->program_fullname}" is afgewezen.
+
+{$a->reason}
 ';
 $string['source_approval_requestallowed'] = 'Aanvragen zijn toegestaan';
 $string['source_approval_requestnotallowed'] = 'Aanvragen zijn niet toegestaan';
@@ -441,7 +475,7 @@ $string['tabusers'] = 'Gebruikers';
 $string['tabvisibility'] = 'Zichtbaarheidsinstellingen';
 $string['tagarea_program'] = 'Programma\'s';
 $string['taskcertificate'] = 'Cron afgifte programmacertificaat';
-$string['taskcron'] = 'Cron plugin programma//'s';
+$string['taskcron'] = 'Cron plugin programma\'s';
 $string['training'] = 'Training';
 $string['trainingcompletion'] = 'Vereiste training: {$a}';
 $string['trainingprogress'] = 'Trainingsvoortgang: {$a->current}/{$a->total}';
