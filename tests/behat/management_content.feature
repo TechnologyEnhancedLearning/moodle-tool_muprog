@@ -366,7 +366,8 @@ Feature: Program content management tests
 
   @javascript @tool_mutenancy
   Scenario: Tenant manager may add program courses from non-conflicting tenants
-    Given the following "tool_mutenancy > tenants" exist:
+    Given I skip tests if "tool_mutenancy" is not installed
+    And the following "tool_mutenancy > tenants" exist:
       | name     | idnumber | category |
       | Tenant 1 | ten1     | CAT1     |
       | Tenant 2 | ten2     | CAT2     |

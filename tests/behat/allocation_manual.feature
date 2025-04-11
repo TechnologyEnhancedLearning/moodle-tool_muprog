@@ -115,7 +115,8 @@ Feature: Manual program allocation tests
 
   @javascript @tool_mutenancy
   Scenario: Tenant manager may allocate users manually to program
-    Given the following "tool_mutenancy > tenants" exist:
+    Given I skip tests if "tool_mutenancy" is not installed
+    And the following "tool_mutenancy > tenants" exist:
       | name     | idnumber | category | assoccohort |
       | Tenant 1 | ten1     | CAT1     | CH1         |
       | Tenant 2 | ten2     | CAT2     | CH2         |
