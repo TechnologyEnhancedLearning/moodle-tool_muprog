@@ -88,7 +88,7 @@ final class form_item_append_trainingid extends \tool_mulib\external\form_autoco
         }
 
         $sql = "SELECT f.id, f.name, f.idnumber, f.archived, f.contextid, f.public
-                  FROM {customfield_mutrain_framework} f
+                  FROM {tool_mutrain_framework} f
                   JOIN {context} c ON c.id = f.contextid
                  WHERE f.archived = 0
                        $tenantselect
@@ -104,7 +104,7 @@ final class form_item_append_trainingid extends \tool_mulib\external\form_autoco
             }
             if (!$framework->public) {
                 $context = \context::instance_by_id($framework->contextid);
-                if (!has_capability('customfield/mutrain:viewframeworks', $context)) {
+                if (!has_capability('tool/mutrain:viewframeworks', $context)) {
                     continue;
                 }
             }
@@ -130,7 +130,7 @@ final class form_item_append_trainingid extends \tool_mulib\external\form_autoco
         return function($value) use ($arguments): string {
             global $DB;
 
-            $framework = $DB->get_record('customfield_mutrain_framework', ['id' => $value]);
+            $framework = $DB->get_record('tool_mutrain_framework', ['id' => $value]);
             if (!$framework) {
                 return get_string('error');
             }
@@ -152,7 +152,7 @@ final class form_item_append_trainingid extends \tool_mulib\external\form_autoco
             return null;
         }
 
-        $framework = $DB->get_record('customfield_mutrain_framework', ['id' => $value]);
+        $framework = $DB->get_record('tool_mutrain_framework', ['id' => $value]);
         if (!$framework || $framework->archived) {
             return get_string('error');
         }
@@ -162,7 +162,7 @@ final class form_item_append_trainingid extends \tool_mulib\external\form_autoco
         }
 
         $context = \context::instance_by_id($framework->contextid);
-        if (has_capability('customfield/mutrain:viewframeworks', $context)) {
+        if (has_capability('tool/mutrain:viewframeworks', $context)) {
             return null;
         } else {
             return get_string('error');

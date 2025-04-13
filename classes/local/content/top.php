@@ -308,7 +308,7 @@ final class top extends set {
             throw new \core\exception\coding_exception('mutrain is not avialable');
         }
 
-        $framework = $DB->get_record('customfield_mutrain_framework', ['id' => $trainingid], '*', MUST_EXIST);
+        $framework = $DB->get_record('tool_mutrain_framework', ['id' => $trainingid], '*', MUST_EXIST);
 
         $record = [
             'id' => null,

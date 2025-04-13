@@ -131,8 +131,8 @@ final class export_test extends \advanced_testcase {
 
         $course1 = $this->getDataGenerator()->create_course();
         $course2 = $this->getDataGenerator()->create_course();
-        /** @var \customfield_mutrain_generator $traininggenerator */
-        $traininggenerator = $this->getDataGenerator()->get_plugin_generator('customfield_mutrain');
+        /** @var \tool_mutrain_generator $traininggenerator */
+        $traininggenerator = $this->getDataGenerator()->get_plugin_generator('tool_mutrain');
         $fielcategory = $this->getDataGenerator()->create_custom_field_category(
             ['component' => 'core_course', 'area' => 'course']);
         $field1 = $this->getDataGenerator()->create_custom_field(
@@ -184,8 +184,8 @@ final class export_test extends \advanced_testcase {
         $course2 = $this->getDataGenerator()->create_course();
 
         if (\tool_muprog\local\util::is_mutrain_available()) {
-            /** @var \customfield_mutrain_generator $traininggenerator */
-            $traininggenerator = $this->getDataGenerator()->get_plugin_generator('customfield_mutrain');
+            /** @var \tool_mutrain_generator $traininggenerator */
+            $traininggenerator = $this->getDataGenerator()->get_plugin_generator('tool_mutrain');
             $fielcategory = $this->getDataGenerator()->create_custom_field_category(
                 ['component' => 'core_course', 'area' => 'course']);
             $field1 = $this->getDataGenerator()->create_custom_field(
@@ -263,8 +263,8 @@ final class export_test extends \advanced_testcase {
         $course2 = $this->getDataGenerator()->create_course();
 
         if (\tool_muprog\local\util::is_mutrain_available()) {
-            /** @var \customfield_mutrain_generator $traininggenerator */
-            $traininggenerator = $this->getDataGenerator()->get_plugin_generator('customfield_mutrain');
+            /** @var \tool_mutrain_generator $traininggenerator */
+            $traininggenerator = $this->getDataGenerator()->get_plugin_generator('tool_mutrain');
             $fielcategory = $this->getDataGenerator()->create_custom_field_category(
                 ['component' => 'core_course', 'area' => 'course']);
             $field1 = $this->getDataGenerator()->create_custom_field(

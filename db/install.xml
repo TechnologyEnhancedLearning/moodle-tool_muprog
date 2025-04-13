@@ -51,7 +51,6 @@
         <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
         <KEY NAME="programid" TYPE="foreign" FIELDS="programid" REFTABLE="tool_muprog_program" REFFIELDS="id"/>
         <KEY NAME="courseid" TYPE="foreign" FIELDS="courseid" REFTABLE="course" REFFIELDS="id"/>
-        <KEY NAME="trainingid" TYPE="foreign" FIELDS="trainingid" REFTABLE="customfield_mutrain_framework" REFFIELDS="id"/>
         <KEY NAME="previtemid" TYPE="foreign" FIELDS="previtemid" REFTABLE="tool_muprog_item" REFFIELDS="id"/>
       </KEYS>
       <INDEXES>
@@ -59,6 +58,7 @@
         <INDEX NAME="points" UNIQUE="false" FIELDS="points"/>
         <INDEX NAME="minpoints" UNIQUE="false" FIELDS="minpoints"/>
         <INDEX NAME="programid-courseid" UNIQUE="false" FIELDS="programid, courseid"/>
+        <INDEX NAME="trainingid" UNIQUE="false" FIELDS="trainingid" COMMENT="references optional tool_mutrain_framework table"/>
       </INDEXES>
     </TABLE>
     <TABLE NAME="tool_muprog_group" COMMENT="Course groups that were created for course items">

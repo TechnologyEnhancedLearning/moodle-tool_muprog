@@ -48,8 +48,8 @@ final class form_item_append_trainingid_test extends \advanced_testcase {
         $category1 = $this->getDataGenerator()->create_category([]);
         $catcontext1 = \context_coursecat::instance($category1->id);
 
-        /** @var \customfield_mutrain_generator $traininggenerator */
-        $traininggenerator = $this->getDataGenerator()->get_plugin_generator('customfield_mutrain');
+        /** @var \tool_mutrain_generator $traininggenerator */
+        $traininggenerator = $this->getDataGenerator()->get_plugin_generator('tool_mutrain');
 
         $fielcategory = $this->getDataGenerator()->create_custom_field_category(
             ['component' => 'core_course', 'area' => 'course']);
@@ -109,7 +109,7 @@ final class form_item_append_trainingid_test extends \advanced_testcase {
         role_assign($editorroleid, $user3->id, $catcontext1->id);
 
         $fviewerroleid = $this->getDataGenerator()->create_role();
-        assign_capability('customfield/mutrain:viewframeworks', CAP_ALLOW, $fviewerroleid, $syscontext);
+        assign_capability('tool/mutrain:viewframeworks', CAP_ALLOW, $fviewerroleid, $syscontext);
         role_assign($fviewerroleid, $user1->id, $syscontext->id);
 
         $this->setUser($user1);
@@ -228,8 +228,8 @@ final class form_item_append_trainingid_test extends \advanced_testcase {
         $user1 = $this->getDataGenerator()->create_user(['tenantid' => $tenant1->id]);
         $user2 = $this->getDataGenerator()->create_user(['tenantid' => $tenant2->id]);
 
-        /** @var \customfield_mutrain_generator $traininggenerator */
-        $traininggenerator = $this->getDataGenerator()->get_plugin_generator('customfield_mutrain');
+        /** @var \tool_mutrain_generator $traininggenerator */
+        $traininggenerator = $this->getDataGenerator()->get_plugin_generator('tool_mutrain');
 
         $data = (object)[
             'name' => 'Framework 0',

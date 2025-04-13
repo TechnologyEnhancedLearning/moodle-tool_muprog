@@ -48,7 +48,7 @@ final class item_append extends \tool_mulib\local\dialog_form {
         $mform->addElement('course', 'courses', get_string('courses'),
             ['multiple' => true, 'exclude' => $exclude, 'requiredcapabilities' => ['tool/muprog:addcourse']]);
 
-        if (util::is_mutrain_available() && $DB->record_exists('customfield_mutrain_framework', ['archived' => 0])) {
+        if (util::is_mutrain_available() && $DB->record_exists('tool_mutrain_framework', ['archived' => 0])) {
             $arguments = ['programid' => $parentset->get_programid()];
             form_item_append_trainingid::add_form_element(
                 $mform, $arguments, 'trainingid', get_string('training', 'tool_muprog'));

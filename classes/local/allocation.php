@@ -577,16 +577,16 @@ final class allocation {
                       FROM {tool_muprog_allocation} pa
                       JOIN {tool_muprog_program} p ON p.id = pa.programid
                       JOIN {tool_muprog_item} pi ON pi.programid = pa.programid
-                      JOIN {customfield_mutrain_framework} tfr ON tfr.id = pi.trainingid
+                      JOIN {tool_mutrain_framework} tfr ON tfr.id = pi.trainingid
                  LEFT JOIN {tool_muprog_completion} pc ON pc.allocationid = pa.id AND pc.itemid = pi.id
                      WHERE pc.id IS NULL
                            AND EXISTS (
 
                                SELECT SUM(cd.intvalue)
-                                 FROM {customfield_mutrain_completion} ctc
+                                 FROM {tool_mutrain_completion} ctc
                                  JOIN {customfield_field} cf ON cf.id = ctc.fieldid
                                  JOIN {customfield_data} cd ON cd.fieldid = cf.id AND cd.instanceid = ctc.instanceid
-                                 JOIN {customfield_mutrain_field} tf ON tf.fieldid = cf.id
+                                 JOIN {tool_mutrain_field} tf ON tf.fieldid = cf.id
                                 WHERE tf.frameworkid = tfr.id AND ctc.userid = pa.userid AND cd.intvalue IS NOT NULL
                                       AND (tfr.restrictedcompletion = 0 OR ctc.timecompleted >= pa.timestart)
                                HAVING SUM(cd.intvalue) >= tfr.requiredtraining

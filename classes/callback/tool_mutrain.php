@@ -19,20 +19,20 @@
 namespace tool_muprog\callback;
 
 /**
- * Hook callbacks from customfield_mutrain related code.
+ * Hook callbacks from tool_mutrain related code.
  *
  * @package    tool_muprog
  * @copyright  2025 Petr Skoda
  * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-final class customfield_mutrain {
+final class tool_mutrain {
     /**
      * Callback to discover training framework usage.
      *
-     * @param \customfield_mutrain\hook\framework_usage $hook
+     * @param \tool_mutrain\hook\framework_usage $hook
      * @return void
      */
-    public static function framework_usage(\customfield_mutrain\hook\framework_usage $hook): void {
+    public static function framework_usage(\tool_mutrain\hook\framework_usage $hook): void {
         global $DB;
 
         $count = $DB->count_records('tool_muprog_item', ['trainingid' => $hook->get_frameworkid()]);
@@ -44,10 +44,10 @@ final class customfield_mutrain {
     /**
      * Callback to announce new completions relevant to framework and user.
      *
-     * @param \customfield_mutrain\hook\completion_updated $hook
+     * @param \tool_mutrain\hook\completion_updated $hook
      * @return void
      */
-    public static function completion_updated(\customfield_mutrain\hook\completion_updated $hook): void {
+    public static function completion_updated(\tool_mutrain\hook\completion_updated $hook): void {
         global $DB;
 
         list($fselect, $params) = $DB->get_in_or_equal($hook->get_frameworkids(), SQL_PARAMS_NAMED);

@@ -30,11 +30,11 @@ defined('MOODLE_INTERNAL') || die();
 
 $callbacks = [
     [
-        'hook' => \customfield_mutrain\hook\framework_usage::class,
-        'callback' => [\tool_muprog\callback\customfield_mutrain::class, 'framework_usage'],
+        'hook' => \tool_mutrain\hook\framework_usage::class,
+        'callback' => [\tool_muprog\callback\tool_mutrain::class, 'framework_usage'],
     ],
     [
-        'hook' => \customfield_mutrain\hook\completion_updated::class,
-        'callback' => [\tool_muprog\callback\customfield_mutrain::class, 'completion_updated'],
+        'hook' => \tool_mutrain\hook\completion_updated::class,
+        'callback' => [\tool_muprog\callback\tool_mutrain::class, 'completion_updated'],
     ],
 ];

@@ -2,7 +2,7 @@
 Feature: Training program completion by students tests
 
   Background:
-    Given I skip tests if "customfield_mutrain" is not installed
+    Given I skip tests if "tool_mutrain" is not installed
     And unnecessary Admin bookmarks block gets deleted
     And the following "categories" exist:
       | name  | category | idnumber |
@@ -22,7 +22,7 @@ Feature: Training program completion by students tests
       | Course 2 | C2        | topics | CAT2     | 1                | 1                        | 8                     | 4                      |
       | Course 3 | C3        | topics | CAT3     | 1                | 1                        | 16                    | 2                      |
       | Course 4 | C4        | topics | CAT1     | 1                | 1                        |                       | 1                      |
-    And the following "customfield_mutrain > frameworks" exist:
+    And the following "tool_mutrain > frameworks" exist:
       | name        | public | requiredtraining | restrictedcompletion | fields    |
       | Framework 1 | 1      | 5                | 0                    | training1 |
       | Framework 2 | 1      | 5                | 1                    | training2 |

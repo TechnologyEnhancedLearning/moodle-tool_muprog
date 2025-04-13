@@ -54,7 +54,7 @@ final class training extends item {
      */
     public function get_required_training(): ?int {
         global $DB;
-        $framework = $DB->get_record('customfield_mutrain_framework', ['id' => $this->trainingid]);
+        $framework = $DB->get_record('tool_mutrain_framework', ['id' => $this->trainingid]);
         if (!$framework) {
             return null;
         }
@@ -69,11 +69,11 @@ final class training extends item {
     public function get_completed_training(stdClass $allocation): int {
         global $DB;
         $sql = "SELECT SUM(cd.intvalue) AS completed
-                  FROM {customfield_mutrain_completion} ctc
+                  FROM {tool_mutrain_completion} ctc
                   JOIN {customfield_field} cf ON cf.id = ctc.fieldid
                   JOIN {customfield_data} cd ON cd.fieldid = cf.id AND cd.instanceid = ctc.instanceid
-                  JOIN {customfield_mutrain_field} tf ON tf.fieldid = cf.id
-                  JOIN {customfield_mutrain_framework} tfr ON tfr.id = tf.frameworkid
+                  JOIN {tool_mutrain_field} tf ON tf.fieldid = cf.id
+                  JOIN {tool_mutrain_framework} tfr ON tfr.id = tf.frameworkid
                  WHERE tfr.id = :trainingid AND ctc.userid = :userid AND cd.intvalue IS NOT NULL
                        AND (tfr.restrictedcompletion = 0 OR ctc.timecompleted >= :timestart)";
         $params = [
@@ -96,7 +96,7 @@ final class training extends item {
 
         $now = time();
 
-        $framework = $DB->get_record('customfield_mutrain_framework', ['id' => $this->trainingid]);
+        $framework = $DB->get_record('tool_mutrain_framework', ['id' => $this->trainingid]);
         if (!$framework) {
             return get_string('error');
         }
@@ -211,7 +211,7 @@ final class training extends item {
     protected function get_record(): array {
         global $DB;
 
-        $fullname = $DB->get_field('customfield_mutrain_framework', 'name', ['id' => $this->trainingid]);
+        $fullname = $DB->get_field('tool_mutrain_framework', 'name', ['id' => $this->trainingid]);
         if ($fullname === false) {
             $fullname = $this->fullname;
         }

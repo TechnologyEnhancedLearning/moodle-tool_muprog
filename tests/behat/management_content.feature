@@ -319,7 +319,7 @@ Feature: Program content management tests
 
   @javascript
   Scenario: Manager may add, update and delete training in program
-    Given I skip tests if "customfield_mutrain" is not installed
+    Given I skip tests if "tool_mutrain" is not installed
     And the following "custom field categories" exist:
       | name              | component   | area   | itemid |
       | Category for test | core_course | course | 0      |
@@ -328,7 +328,7 @@ Feature: Program content management tests
       | Training Field 1 | Category for test  | mutrain | training1 |                       |
       | Training Field 2 | Category for test  | mutrain | training2 |                       |
       | Training Field 3 | Category for test  | mutrain | training3 |                       |
-    And the following "customfield_mutrain > frameworks" exist:
+    And the following "tool_mutrain > frameworks" exist:
       | name    | fields    | category | public | requiredtraining | restrictedcompletion |
       | TFR 001 | training1 |          | 1      | 10               | 0                    |
       | TFR 002 | training2 | Cat 2    | 1      | 20               | 1                    |

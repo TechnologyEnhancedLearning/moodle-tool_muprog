@@ -202,8 +202,8 @@ Feature: Program upload full tests
 
   @_file_upload
   Scenario: System manager can upload all programs into original categories using normal JSON with training
-    Given I skip tests if "customfield_mutrain" is not installed
-    And the following "customfield_mutrain > frameworks" exist:
+    Given I skip tests if "tool_mutrain" is not installed
+    And the following "tool_mutrain > frameworks" exist:
       | name         | idnumber | public | requiredtraining |
       | Training FW1 | TFW1     | 1      | 10               |
       | Training FW2 |          | 1      | 20               |
@@ -632,8 +632,8 @@ Feature: Program upload full tests
 
   @_file_upload
   Scenario: System manager can upload all programs into original categories using extracted CSV with training
-    Given I skip tests if "customfield_mutrain" is not installed
-    And the following "customfield_mutrain > frameworks" exist:
+    Given I skip tests if "tool_mutrain" is not installed
+    And the following "tool_mutrain > frameworks" exist:
       | name         | idnumber | public | requiredtraining |
       | Training FW1 | TFW1     | 1      | 10               |
       | Training FW2 |          | 1      | 20               |

@@ -163,9 +163,9 @@ class tool_muprog_generator extends component_generator_base {
             return $top->append_course($parent, $course->id);
         } else if (!empty($record->trainingid) || !empty($record->training)) {
             if (!empty($record->trainingid)) {
-                $framework = $DB->get_record('customfield_mutrain_framework', ['id' => $record->trainingid], '*', MUST_EXIST);
+                $framework = $DB->get_record('tool_mutrain_framework', ['id' => $record->trainingid], '*', MUST_EXIST);
             } else {
-                $framework = $DB->get_record('customfield_mutrain_framework', ['name' => $record->training], '*', MUST_EXIST);
+                $framework = $DB->get_record('tool_mutrain_framework', ['name' => $record->training], '*', MUST_EXIST);
             }
             return $top->append_training($parent, $framework->id);
         } else {

@@ -224,8 +224,8 @@ final class generator_test extends \advanced_testcase {
             return;
         }
 
-        /** @var \customfield_mutrain_generator $traininggenerator */
-        $traininggenerator = $this->getDataGenerator()->get_plugin_generator('customfield_mutrain');
+        /** @var \tool_mutrain_generator $traininggenerator */
+        $traininggenerator = $this->getDataGenerator()->get_plugin_generator('tool_mutrain');
         $fielcategory = $this->getDataGenerator()->create_custom_field_category(
             ['component' => 'core_course', 'area' => 'course']);
         $field1 = $this->getDataGenerator()->create_custom_field(

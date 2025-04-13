@@ -55,7 +55,7 @@ final class util {
      * @return bool
      */
     public static function is_mutrain_available(): bool {
-        return class_exists(\customfield_mutrain\local\framework::class);
+        return class_exists(\tool_mutrain\local\framework::class);
     }
 
     /**
