@@ -188,8 +188,7 @@ final class certificate_test extends \advanced_testcase {
         // Program archived.
         $allocation2->archived = 0;
         $allocation2 = \tool_muprog\local\allocation::update_user($allocation2);
-        $program->archived = 1;
-        $program = \tool_muprog\local\program::update_program_general($program);
+        $program = \tool_muprog\local\program::archive($program->id);
         $this->assertFalse(\tool_muprog\local\certificate::issue($program->id, $user2->id));
 
         // Not allocated.

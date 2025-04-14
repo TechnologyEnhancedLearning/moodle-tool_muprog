@@ -85,9 +85,9 @@ final class selfallocation_test extends \advanced_testcase {
 
         // Must not be archived.
 
-        $program1 = program::update_program_general((object)['id' => $program1->id, 'archived' => 1]);
+        $program1 = program::archive($program1->id);
         $this->assertFalse(\tool_muprog\local\source\selfallocation::can_user_request($program1, $source1a, $user1->id));
-        $program1 = program::update_program_general((object)['id' => $program1->id, 'archived' => 0]);
+        $program1 = program::restore($program1->id);
 
         // Real user required.
 

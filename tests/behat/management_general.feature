@@ -134,6 +134,24 @@ Feature: General programs management tests
     And I should see "No" in the "Archived" definition list item
 
   @javascript
+  Scenario: Manager may archive and restore program
+    Given I log in as "manager1"
+    And I am on the "tool_muprog > All programs management" page
+    And I click on "Add program" "button"
+    And I set the following fields in the ".modal-dialog" "css_element" to these values:
+      | Program name  | Program 001 |
+      | Program ID    | PR01        |
+    And I press dialog form button "Add program"
+
+    When I click on "Archive program" "link"
+    And I press dialog form button "Archive program"
+    Then I should see "Yes" in the "Archived" definition list item
+
+    When I click on "Restore program" "link"
+    And I press dialog form button "Restore program"
+    Then I should see "No" in the "Archived" definition list item
+
+  @javascript
   Scenario: Manager may delete program
     Given I log in as "manager1"
     And I am on the "tool_muprog > All programs management" page
@@ -142,10 +160,8 @@ Feature: General programs management tests
       | Program name  | Program 001 |
       | Program ID    | PR01        |
     And I press dialog form button "Add program"
-    And I press "Edit"
-    And I set the following fields in the ".modal-dialog" "css_element" to these values:
-      | Archived  | 1 |
-    And I press dialog form button "Update program"
+    And I click on "Archive program" "link"
+    And I press dialog form button "Archive program"
     And I should see "Yes" in the "Archived" definition list item
 
     When I click on "Program actions" "link"

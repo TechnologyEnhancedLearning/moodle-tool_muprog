@@ -90,9 +90,7 @@ final class manual_test extends \advanced_testcase {
         $program1 = program::update_program_allocation(
             (object)['id' => $program1->id, 'timeallocationstart' => null, 'timeallocationend' => null]
         );
-        $program1 = program::update_program_general(
-            (object)['id' => $program1->id, 'archived' => 1]
-        );
+        $program1 = program::archive($program1->id);
         $this->assertFalse(\tool_muprog\local\source\manual::is_allocation_possible($program1, $source1));
     }
 

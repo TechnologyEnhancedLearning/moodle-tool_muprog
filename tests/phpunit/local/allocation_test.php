@@ -1019,7 +1019,7 @@ final class allocation_test extends \advanced_testcase {
         $allocation->timeend = (string)($now + 60 * 60 * 20);
         $allocation->timecompleted = (string)($now - 60 * 60 * 1);
         \tool_muprog\local\allocation::update_user($allocation);
-        $program1 = \tool_muprog\local\program::update_program_general((object)['id' => $program1->id, 'archived' => 1]);
+        $program1 = \tool_muprog\local\program::archive($program1->id);
         $allocation = $DB->get_record('tool_muprog_allocation', ['programid' => $program1->id, 'userid' => $user1->id], '*', MUST_EXIST);
         $this->assertSame('Archived completed', \tool_muprog\local\allocation::get_completion_status_plain($program1, $allocation));
     }
@@ -1167,7 +1167,7 @@ final class allocation_test extends \advanced_testcase {
         $allocation->timeend = (string)($now + 60 * 60 * 20);
         $allocation->timecompleted = (string)($now - 60 * 60 * 1);
         allocation::update_user($allocation);
-        $program1 = program::update_program_general((object)['id' => $program1->id, 'archived' => 1]);
+        $program1 = program::archive($program1->id);
         $allocation = $DB->get_record('tool_muprog_allocation', ['programid' => $program1->id, 'userid' => $user1->id], '*', MUST_EXIST);
         $this->assertStringContainsString('Archived completed', allocation::get_completion_status_html($program1, $allocation));
     }

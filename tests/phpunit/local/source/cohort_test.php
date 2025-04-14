@@ -227,7 +227,7 @@ final class cohort_test extends \advanced_testcase {
 
         // Freezing of archived program.
 
-        $program1 = program::update_program_general((object)['id' => $program1->id, 'archived' => 1]);
+        $program1 = program::archive($program1->id);
 
         \cohort_remove_member($cohort2->id, $user2->id);
         $allocations = $DB->get_records('tool_muprog_allocation', ['programid' => $program1->id], 'userid ASC');
@@ -260,7 +260,7 @@ final class cohort_test extends \advanced_testcase {
 
         \tool_muprog\local\source\manual::deallocate_user($program1, $source1m, $allocations[0]);
 
-        $program1 = program::update_program_general((object)['id' => $program1->id, 'archived' => 0]);
+        $program1 = program::restore($program1->id);
         $allocations = $DB->get_records('tool_muprog_allocation', ['programid' => $program1->id], 'userid ASC');
         $allocations = array_values($allocations);
         $this->assertCount(2, $allocations);

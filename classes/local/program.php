@@ -317,8 +317,9 @@ final class program {
         if (isset($data->descriptionformat)) {
             $record->descriptionformat = $data->descriptionformat;
         }
-        if (isset($data->archived)) {
-            $record->archived = (int)(bool)$data->archived;
+        // Do not change archived flag here!
+        if (isset($data->archived) && $data->archived != $oldprogram->archived) {
+            debugging('Use program::archive() and program::restore() to change archived flag', DEBUG_DEVELOPER);
         }
         if (isset($data->creategroups)) {
             $record->creategroups = (int)(bool)$data->creategroups;
@@ -410,6 +411,72 @@ final class program {
             $DB->set_field('tool_muprog_program', 'presentationjson', util::json_encode($presenation), ['id' => $program->id]);
             $program = $DB->get_record('tool_muprog_program', ['id' => $data->id], '*', MUST_EXIST);
         }
+
+        return $program;
+    }
+
+    /**
+     * Archive program.
+     *
+     * @param int $programid
+     * @return stdClass
+     */
+    public static function archive(int $programid): stdClass {
+        global $DB;
+
+        $program = $DB->get_record('tool_muprog_program', ['id' => $programid], '*', MUST_EXIST);
+
+        if ($program->archived) {
+            return $program;
+        }
+
+        $trans = $DB->start_delegated_transaction();
+
+        $DB->set_field('tool_muprog_program', 'archived', '1', ['id' => $program->id]);
+        $program = self::make_snapshot($program->id, 'archive');
+
+        $trans->allow_commit();
+
+        allocation::fix_allocation_sources($program->id, null);
+        allocation::fix_enrol_instances($program->id);
+        allocation::fix_user_enrolments($program->id, null);
+        calendar::fix_program_events($program);
+
+        $event = \tool_muprog\event\program_updated::create_from_program($program);
+        $event->trigger();
+
+        return $program;
+    }
+
+    /**
+     * Restore program.
+     *
+     * @param int $programid
+     * @return stdClass
+     */
+    public static function restore(int $programid): stdClass {
+        global $DB;
+
+        $program = $DB->get_record('tool_muprog_program', ['id' => $programid], '*', MUST_EXIST);
+
+        if (!$program->archived) {
+            return $program;
+        }
+
+        $trans = $DB->start_delegated_transaction();
+
+        $DB->set_field('tool_muprog_program', 'archived', '0', ['id' => $program->id]);
+        $program = self::make_snapshot($program->id, 'restore');
+
+        $trans->allow_commit();
+
+        allocation::fix_allocation_sources($program->id, null);
+        allocation::fix_enrol_instances($program->id);
+        allocation::fix_user_enrolments($program->id, null);
+        calendar::fix_program_events($program);
+
+        $event = \tool_muprog\event\program_updated::create_from_program($program);
+        $event->trigger();
 
         return $program;
     }

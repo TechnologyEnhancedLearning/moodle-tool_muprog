@@ -124,7 +124,7 @@ final class source_manual_allocate_users_test extends \advanced_testcase {
         $this->assertCount(1, $results);
 
         $this->setAdminUser();
-        \tool_muprog\local\program::update_program_general((object)['id' => $program1->id, 'archived' => 1]);
+        \tool_muprog\local\program::archive($program1->id);
         try {
             \tool_muprog\external\source_manual_allocate_users::execute($program1->id, [], [$cohort1->id]);
             $this->fail('Exception expected');

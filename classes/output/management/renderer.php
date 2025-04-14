@@ -83,9 +83,22 @@ class renderer extends \plugin_renderer_base {
             $description = '&nbsp;';
         }
         $result .= '<dt class="col-3">' . get_string('description') . '</dt><dd class="col-9">' . $description . '</dd>';
-        $result .= '<dt class="col-3">' . get_string('archived', 'tool_muprog') . '</dt><dd class="col-9">'
-            . ($program->archived ? get_string('yes') : get_string('no')) . '</dd>';
 
+        $archived = $program->archived ? get_string('yes') : get_string('no');
+        if (has_capability('tool/muprog:edit', $context)) {
+            if ($program->archived) {
+                $url = new moodle_url('/admin/tool/muprog/management/program_restore.php', ['id' => $program->id]);
+                $action = new \tool_mulib\output\dialog_form\icon($url, get_string('program_restore', 'tool_muprog'), 'i/settings');
+            } else {
+                $url = new moodle_url('/admin/tool/muprog/management/program_archive.php', ['id' => $program->id]);
+                $action = new \tool_mulib\output\dialog_form\icon($url, get_string('program_archive', 'tool_muprog'), 'i/settings');
+            }
+            $action->set_dialog_size('');
+            $archived .= $this->output->render($action);
+        }
+        $result .= '<dt class="col-3">' . get_string('archived', 'tool_muprog') . '</dt><dd class="col-9">' . $archived . '</dd>';
+
+        /** @var \tool_muprog\output\customfield\renderer $customfieldoutput */
         $customfieldoutput = $this->page->get_renderer('tool_muprog', 'customfield');
         $result .= $customfieldoutput->render_customfields($program->id);
         $result .= '</dl>';

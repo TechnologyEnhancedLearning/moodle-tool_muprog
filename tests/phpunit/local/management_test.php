@@ -102,8 +102,8 @@ final class management_test extends \advanced_testcase {
         $program5 = $generator->create_program(['contextid' => $catcontext1->id]);
         $program6 = $generator->create_program(['contextid' => $catcontext2->id]);
 
-        $program3 = \tool_muprog\local\program::update_program_general((object)['id' => $program3->id, 'archived' => 1]);
-        $program5 = \tool_muprog\local\program::update_program_general((object)['id' => $program5->id, 'archived' => 1]);
+        $program3 = \tool_muprog\local\program::archive($program3->id);
+        $program5 = \tool_muprog\local\program::archive($program5->id);
 
         $result = \tool_muprog\local\management::fetch_programs(null, false, '', 0, 100, 'id ASC');
         $this->assertCount(2, $result);
