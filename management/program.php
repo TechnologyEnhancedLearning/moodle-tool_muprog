@@ -57,6 +57,7 @@ $dropdown = new dropdown(get_string('extra_menu_management_program_general', 'to
 if ($program->archived && has_capability('tool/muprog:delete', $context)) {
     $url = new moodle_url('/admin/tool/muprog/management/program_delete.php', ['id' => $program->id]);
     $link = new tool_mulib\output\dialog_form\link($url, get_string('program_delete', 'tool_muprog'));
+    $link->set_dialog_size('sm');
     $link->set_after_submit($link::AFTER_SUBMIT_REDIRECT);
     $dropdown->add_dialog_form($link);
 }
