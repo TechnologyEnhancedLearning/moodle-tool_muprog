@@ -433,7 +433,7 @@ final class program {
         $DB->set_field('tool_muprog_program', 'archived', '1', ['id' => $program->id]);
         $program = $DB->get_record('tool_muprog_program', ['id' => $program->id], '*', MUST_EXIST);
 
-        \tool_muprog\event\program_updated::create_from_program($program)->trigger();
+        \tool_muprog\event\program_archived::create_from_program($program)->trigger();
 
         $trans->allow_commit();
 
@@ -465,7 +465,7 @@ final class program {
         $DB->set_field('tool_muprog_program', 'archived', '0', ['id' => $program->id]);
         $program = $DB->get_record('tool_muprog_program', ['id' => $program->id], '*', MUST_EXIST);
 
-        \tool_muprog\event\program_updated::create_from_program($program)->trigger();
+        \tool_muprog\event\program_restored::create_from_program($program)->trigger();
 
         $trans->allow_commit();
 
