@@ -35,9 +35,9 @@ final class program_updated extends \core\event\base {
      * @param string|null $action
      * @param int|null $otherid
      *
-     * @return program_updated|static
+     * @return static
      */
-    public static function create_from_program(\stdClass $program, ?string $action = null, ?int $otherid = null) {
+    public static function create_from_program(\stdClass $program, ?string $action = null, ?int $otherid = null): static {
         $context = \context::instance_by_id($program->contextid);
         $data = [
             'context' => $context,

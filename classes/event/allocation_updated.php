@@ -34,7 +34,7 @@ final class allocation_updated extends \core\event\base {
      *
      * @return static
      */
-    public static function create_from_allocation(\stdClass $allocation, \stdClass $program) {
+    public static function create_from_allocation(\stdClass $allocation, \stdClass $program): static {
         $context = \context::instance_by_id($program->contextid);
         $data = [
             'context' => $context,

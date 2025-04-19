@@ -36,7 +36,7 @@ final class allocation_completed extends \core\event\base {
      *
      * @return static
      */
-    public static function create_from_allocation(\stdClass $allocation, \stdClass $program) {
+    public static function create_from_allocation(\stdClass $allocation, \stdClass $program): static {
         if (!$allocation->timecompleted) {
             throw new \coding_exception('user must have already completed the program');
         }
