@@ -15,6 +15,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 // phpcs:disable moodle.Files.BoilerplateComment.CommentEndedTooSoon
+// phpcs:disable moodle.Files.LineLength.TooLong
 
 /**
  * Programs management interface.
@@ -58,7 +59,7 @@ echo $OUTPUT->header();
 
 if (has_capability('tool/muprog:edit', $context)) {
     $editurl = new moodle_url('/admin/tool/muprog/management/program_allocations_edit.php', ['id' => $program->id]);
-    $editbutton = new tool_mulib\output\dialog_form\icon($editurl, get_string('updateallocations', 'tool_muprog'), 'i/settings');
+    $editbutton = new tool_mulib\output\dialog_form\icon($editurl, get_string('program_allocations_edit', 'tool_muprog'), 'i/settings');
     $editbutton->set_dialog_name(get_string('allocations', 'tool_muprog'));
     $editbutton = ' ' . $OUTPUT->render($editbutton);
 } else {
