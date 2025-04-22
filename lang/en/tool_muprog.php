@@ -121,7 +121,7 @@ $string['exportformat_json'] = 'JSON';
 $string['fixeddate'] = 'At a fixed date';
 $string['importallocationend'] = 'Allocation end ({$a})';
 $string['importallocationstart'] = 'Allocation start ({$a})';
-$string['importprogramallocation'] = 'Import program allocation';
+$string['importprogramallocation'] = 'Import allocation settings';
 $string['importprogramallocationconfirmation'] = 'You are importing allocation settings from program __{$a->fullname} / {$a->idnumber} / {$a->category}__.
 
 Please select all settings that you want to import.';
@@ -138,8 +138,9 @@ $string['itemcompletion'] = 'Program item completion';
 $string['itempoints'] = 'Points';
 $string['itemrecalculate'] = 'Recalculate item completion';
 $string['management'] = 'Programs management';
+$string['management_allocation_actions'] = 'Allocation actions';
 $string['management_index_actions'] = 'Programs actions';
-$string['management_program_allocation_actions'] = 'Allocation actions';
+$string['management_program_allocation_actions'] = 'Allocation settings actions';
 $string['management_program_general_actions'] = 'Program actions';
 $string['management_program_users_actions'] = 'Users actions';
 $string['messageprovider:allocation_notification'] = 'Program allocation notification';
