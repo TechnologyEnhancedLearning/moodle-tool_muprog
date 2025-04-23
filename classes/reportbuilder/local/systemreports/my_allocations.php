@@ -83,7 +83,14 @@ final class my_allocations extends system_report {
 
     #[\Override]
     protected function can_view(): bool {
-        return has_capability('tool/muprog:view', $this->get_context());
+        // Everybody may view own programs.
+        if (!\tool_muprog\local\util::is_muprog_active()) {
+            return false;
+        }
+        if (isguestuser() || !isloggedin()) {
+            return false;
+        }
+        return true;
     }
 
     /**
