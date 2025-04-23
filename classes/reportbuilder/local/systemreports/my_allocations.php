@@ -30,7 +30,7 @@ use lang_string;
 use moodle_url;
 
 /**
- * Embedded program allocations report for My programs page.
+ * Embedded My programs report.
  *
  * @package     tool_muprog
  * @copyright   2025 Petr Skoda
@@ -70,10 +70,6 @@ final class my_allocations extends system_report {
             "{$allocationalias}.userid = :$param AND {$allocationalias}.archived = 0 AND {$programalias}.archived = 0",
             [$param => $USER->id]);
 
-        $this->add_base_fields("{$allocationalias}.id, {$allocationalias}.sourceid, {$allocationalias}.userid,"
-            . " {$allocationalias}.programid, {$allocationalias}.archived, {$sourcealias}.type, "
-            . "{$programalias}.contextid, {$programalias}.archived AS programarchived");
-
         $this->add_columns();
         $this->add_filters();
 
@@ -104,12 +100,10 @@ final class my_allocations extends system_report {
         $column = $this->programentity->get_column('fullname')
             ->add_field("{$programalias}.id")
             ->add_callback(static function($value, \stdClass $row): string {
-                global $OUTPUT;
                 if (!$value) {
                     return '';
                 }
                 $value = format_string($value);
-                $value = $OUTPUT->pix_icon('program', '', 'tool_muprog') . $value;
                 $url = new \moodle_url('/admin/tool/muprog/my/program.php', ['id' => $row->id]);
                 return \html_writer::link($url, $value);
             });
