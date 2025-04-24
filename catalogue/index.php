@@ -40,6 +40,7 @@ $syscontext = context_system::instance();
 
 $PAGE->set_url($catalogue->get_current_url());
 $PAGE->set_context($syscontext);
+$PAGE->set_secondary_navigation(false);
 
 require_login();
 require_capability('tool/muprog:viewcatalogue', $syscontext);

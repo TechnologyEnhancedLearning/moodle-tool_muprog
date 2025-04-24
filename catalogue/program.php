@@ -41,6 +41,7 @@ $syscontext = context_system::instance();
 
 $PAGE->set_url(new moodle_url('/admin/tool/muprog/catalogue/program.php', ['id' => $id]));
 $PAGE->set_context(context_system::instance());
+$PAGE->set_secondary_navigation(false);
 
 require_login();
 require_capability('tool/muprog:viewcatalogue', context_system::instance());
