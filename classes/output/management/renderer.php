@@ -32,7 +32,7 @@ use tool_muprog\local\content\item,
 use stdClass, moodle_url, html_writer;
 
 /**
- * Programs management renderer.
+ * Program management renderer.
  *
  * @package    tool_muprog
  * @copyright  2022 Open LMS (https://www.openlms.net/)

@@ -26,7 +26,7 @@ use tool_muprog\local\content\top;
 use moodle_url, stdClass;
 
 /**
- * Programs management helper.
+ * Program management helper.
  *
  * @package    tool_muprog
  * @copyright  2022 Open LMS (https://www.openlms.net/)

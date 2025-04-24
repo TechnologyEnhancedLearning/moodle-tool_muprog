@@ -21,7 +21,7 @@
 namespace tool_muprog\phpunit\local;
 
 /**
- * Programs management helper test.
+ * Program management helper test.
  *
  * @group      muTMS
  * @package    tool_muprog
