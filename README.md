@@ -1,5 +1,7 @@
 # Programs plugin for Moodle™
 
+![Moodle Plugin CI](https://github.com/mutms/moodle-tool_muprog/actions/workflows/moodle-ci.yml/badge.svg)
+
 Programs is a set of plugins that implements programs, also known as learning pathways.
 
 Main features include:
