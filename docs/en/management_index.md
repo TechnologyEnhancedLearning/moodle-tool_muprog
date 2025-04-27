@@ -9,7 +9,7 @@
 * [Program users](management_program_users.md)
    * [User allocation](management_allocation.md)
 
-Programs can be established at either the system or course category context levels. Access to the program management
+Programs can be created at either the system or course category context levels. Access to the program management
 interface is, by default, limited to users with Manager or Editing teacher roles.
 
 ![List of programs](img/programs.png)

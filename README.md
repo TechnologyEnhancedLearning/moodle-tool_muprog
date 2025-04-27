@@ -16,8 +16,8 @@ or training offerings.
 * advanced program scheduling settings,
 * efficient course enrolment automation,
 * easy-to-use program management interface,
-* My programs profile page,
-* My programs dashboard block.
+- dedicated _My programs_ profile page,
+- _My programs_ dashboard block for quick access to details.
 
 **Additional benefits**
 

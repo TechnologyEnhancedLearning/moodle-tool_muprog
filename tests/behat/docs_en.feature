@@ -5,9 +5,9 @@ Feature: Programs plugin English documentation image generator
     Given site is prepared for documentation screenshots
     And the following "categories" exist:
       | name                   | category | idnumber |
-      | Health and safety      | 0        | HS     |
-      | Mechanical engineering | 0        | ME     |
-      | Weekend fun            | 0        | WF     |
+      | Health and safety      | 0        | HS       |
+      | Mechanical engineering | 0        | ME       |
+      | Weekend fun            | 0        | WF       |
     And the following "cohorts" exist:
       | name         | idnumber |
       | Petrol Heads | CH1      |
@@ -97,11 +97,12 @@ Feature: Programs plugin English documentation image generator
       | Motorcycle Maintenance for Beginners | k        |                        |                        |
 
   @javascript
-  Scenario: Documentation screenshots for management_index page
+  Scenario: Documentation screenshots for programs management_index page
     Given I log in as "manager"
     And I am on the "tool_muprog > All programs management" page
 
     Then I make documentation screenshot "programs.png" for "tool_muprog" plugin
+    And site is restored after documentation screenshots
 
   @javascript
   Scenario: Documentation screenshots for management_program page
@@ -110,6 +111,7 @@ Feature: Programs plugin English documentation image generator
     And I follow "Advanced First Aid"
 
     Then I make documentation screenshot "program_general.png" for "tool_muprog" plugin
+    And site is restored after documentation screenshots
 
   @javascript
   Scenario: Documentation screenshots for management_program_content page
@@ -119,6 +121,7 @@ Feature: Programs plugin English documentation image generator
     And I click on "Content" "link" in the ".nav-tabs" "css_element"
 
     Then I make documentation screenshot "program_content.png" for "tool_muprog" plugin
+    And site is restored after documentation screenshots
 
   @javascript
   Scenario: Documentation screenshots for management_program_visibility page
@@ -128,6 +131,7 @@ Feature: Programs plugin English documentation image generator
     And I click on "Catalogue visibility" "link" in the ".nav-tabs" "css_element"
 
     Then I make documentation screenshot "program_visibility.png" for "tool_muprog" plugin
+    And site is restored after documentation screenshots
 
   @javascript
   Scenario: Documentation screenshots for management_program_allocation page
@@ -153,6 +157,7 @@ Feature: Programs plugin English documentation image generator
     And I change window size to "1208x900"
 
     Then I make documentation screenshot "program_allocation.png" for "tool_muprog" plugin
+    And site is restored after documentation screenshots
 
   @javascript
   Scenario: Documentation screenshots for management_program_users page
@@ -162,6 +167,7 @@ Feature: Programs plugin English documentation image generator
     And I click on "Users" "link" in the ".nav-tabs" "css_element"
 
     Then I make documentation screenshot "program_users.png" for "tool_muprog" plugin
+    And site is restored after documentation screenshots
 
   @javascript
   Scenario: Documentation screenshots for management_allocation page
@@ -173,6 +179,7 @@ Feature: Programs plugin English documentation image generator
     And I change window size to "1208x1100"
 
     Then I make documentation screenshot "allocation.png" for "tool_muprog" plugin
+    And site is restored after documentation screenshots
 
   @javascript
   Scenario: Documentation screenshots for My programs profile page
@@ -183,6 +190,7 @@ Feature: Programs plugin English documentation image generator
     And I follow "Motorcycle Maintenance for Beginners"
     And I change window size to "1208x1000"
     Then I make documentation screenshot "profile_my_program.png" for "tool_muprog" plugin
+    And site is restored after documentation screenshots
 
   @javascript
   Scenario: Documentation screenshots for My programs block
@@ -202,6 +210,7 @@ Feature: Programs plugin English documentation image generator
     And I add the "My programs" block to the "content" region
     And I turn editing mode off
     Then I make documentation screenshot "dashboard_my_programs.png" for "tool_muprog" plugin
+    And site is restored after documentation screenshots
 
   @javascript
   Scenario: Documentation screenshots for Program catalogue page
@@ -210,3 +219,4 @@ Feature: Programs plugin English documentation image generator
     And I follow "Program catalogue"
 
     Then I make documentation screenshot "catalogue.png" for "tool_muprog" plugin
+    And site is restored after documentation screenshots
