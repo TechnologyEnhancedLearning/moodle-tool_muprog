@@ -11,11 +11,12 @@ Main features include:
 * multiple sources for allocation of students to programs,
 * advanced program scheduling settings,
 * efficient course enrolment automation,
+* My programs profile page,
 * My programs dashboard block,
-* Training value custom course field,
+* Training value custom fields,
 * easy-to-use program management interface.
 
-# Installation and requirements
+## Installation and requirements
 
 This plugin requires following plugins:
 
