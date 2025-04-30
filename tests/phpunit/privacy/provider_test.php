@@ -30,7 +30,7 @@ use tool_muprog\privacy\provider;
 /**
  * Privacy provider tests for tool_muprog.
  *
- * @group      muTMS
+ * @group      MuTMS
  * @package    tool_muprog
  * @copyright  2022 Open LMS (https://www.openlms.net/)
  * @author     Chris Tranel

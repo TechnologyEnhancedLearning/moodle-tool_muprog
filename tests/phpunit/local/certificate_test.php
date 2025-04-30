@@ -23,7 +23,7 @@ namespace tool_muprog\phpunit\local;
 /**
  * Program certificate issuing test.
  *
- * @group      muTMS
+ * @group      MuTMS
  * @package    tool_muprog
  * @copyright  2022 Open LMS (https://www.openlms.net/)
  * @copyright  2025 Petr Skoda

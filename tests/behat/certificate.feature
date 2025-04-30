@@ -1,4 +1,4 @@
-@tool @tool_muprog @muTMS @tool_certificate
+@tool @tool_muprog @MuTMS @tool_certificate
 Feature: Issuing of certificates for program completion
 
   Background:

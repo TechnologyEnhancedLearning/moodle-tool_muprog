@@ -1,4 +1,4 @@
-@tool @tool_muprog @muTMS @javascript
+@tool @tool_muprog @MuTMS @javascript
 Feature: Program encoding upload tests
 
   Background:

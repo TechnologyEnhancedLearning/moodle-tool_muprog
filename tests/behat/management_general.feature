@@ -1,4 +1,4 @@
-@tool @tool_muprog @muTMS
+@tool @tool_muprog @MuTMS
 Feature: General programs management tests
 
   Background:

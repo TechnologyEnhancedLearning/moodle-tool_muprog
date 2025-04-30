@@ -24,7 +24,7 @@ use tool_muprog\local\source\selfallocation;
 /**
  * Tests for external source delete program allocation users.
  *
- * @group      muTMS
+ * @group      MuTMS
  * @package    tool_muprog
  * @copyright  2023 Open LMS (https://www.openlms.net/)
  * @author     Farhan Karmali

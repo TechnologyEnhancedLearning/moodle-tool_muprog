@@ -22,7 +22,7 @@ namespace tool_muprog\phpunit\external;
 /**
  * External API for get program list
  *
- * @group      muTMS
+ * @group      MuTMS
  * @package    tool_muprog
  * @copyright  2023 Open LMS (https://www.openlms.net/)
  * @author     Farhan Karmali

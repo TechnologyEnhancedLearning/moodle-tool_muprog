@@ -1,4 +1,4 @@
-@tool @tool_muprog @muTMS
+@tool @tool_muprog @MuTMS
 Feature: Programs behat generator tests
 
   Background:

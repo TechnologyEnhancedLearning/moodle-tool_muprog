@@ -23,7 +23,7 @@ use tool_muprog\local\program;
 /**
  * Programs cron test.
  *
- * @group      muTMS
+ * @group      MuTMS
  * @package    tool_muprog
  * @copyright  2022 Open LMS (https://www.openlms.net/)
  * @copyright  2025 Petr Skoda

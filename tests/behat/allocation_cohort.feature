@@ -1,4 +1,4 @@
-@tool @tool_muprog @muTMS
+@tool @tool_muprog @MuTMS
 Feature: Visible cohorts program allocation tests
 
   Background:

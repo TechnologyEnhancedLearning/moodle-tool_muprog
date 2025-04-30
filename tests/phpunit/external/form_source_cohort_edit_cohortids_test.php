@@ -24,7 +24,7 @@ use tool_muprog\external\form_source_cohort_edit_cohortids;
 /**
  * External API for program visibility cohorts test.
  *
- * @group      muTMS
+ * @group      MuTMS
  * @package    tool_muprog
  * @copyright  2025 Petr Skoda
  * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later

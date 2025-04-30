@@ -22,7 +22,7 @@ namespace tool_muprog\phpunit\external;
 /**
  * External API for updating of program allocations
  *
- * @group      muTMS
+ * @group      MuTMS
  * @package    tool_muprog
  * @copyright  2023 Open LMS (https://www.openlms.net/)
  * @copyright  2025 Petr Skoda

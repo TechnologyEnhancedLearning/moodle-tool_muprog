@@ -25,7 +25,7 @@ use tool_muprog\local\course_reset;
 /**
  * Assignment activity purge test.
  *
- * @group      muTMS
+ * @group      MuTMS
  * @package    tool_muprog
  * @copyright  2024 Open LMS (https://www.openlms.net/)
  * @copyright  2025 Petr Skoda

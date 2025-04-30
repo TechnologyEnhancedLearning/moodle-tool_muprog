@@ -26,7 +26,7 @@ use tool_muprog\local\source\manual;
 /**
  * Program allocation notifications test.
  *
- * @group      muTMS
+ * @group      MuTMS
  * @package    tool_muprog
  * @copyright  2023 Open LMS (https://www.openlms.net/)
  * @copyright  2025 Petr Skoda

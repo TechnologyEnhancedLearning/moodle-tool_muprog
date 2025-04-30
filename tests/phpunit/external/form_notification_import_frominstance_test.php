@@ -22,7 +22,7 @@ namespace tool_muprog\phpunit\external;
 /**
  * External API for form import program notification
  *
- * @group      muTMS
+ * @group      MuTMS
  * @package    tool_muprog
  * @copyright  2024 Open LMS (https://www.openlms.net/)
  * @author     Farhan Karmali

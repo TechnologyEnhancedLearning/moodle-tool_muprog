@@ -22,7 +22,7 @@ namespace tool_muprog\phpunit\external;
 /**
  * External API for adding of training to program.
  *
- * @group      muTMS
+ * @group      MuTMS
  * @package    tool_muprog
  * @copyright  2024 Open LMS (https://www.openlms.net/)
  * @copyright  2025 Petr Skoda
