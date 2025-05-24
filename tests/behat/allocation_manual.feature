@@ -207,7 +207,7 @@ Feature: Manual program allocation tests
       | User mapping via           | Username |
       | First line is header       | 1        |
     And I press dialog form button "Upload allocations"
-    Then I should see "3 users were assigned to program."
+    Then I should see "3 users were allocated to program."
     And "Student 1" row "Source" column of "reportbuilder-table" table should contain "Manual allocation"
     And "Student 2" row "Source" column of "reportbuilder-table" table should contain "Manual allocation"
     And "Student 3" row "Source" column of "reportbuilder-table" table should contain "Manual allocation"
@@ -226,9 +226,9 @@ Feature: Manual program allocation tests
     And I set the following fields in the ".modal-dialog" "css_element" to these values:
       | User mapping via           | Email address    |
     And I press dialog form button "Upload allocations"
-    Then I should see "1 users were assigned to program."
-    And I should see "2 users were already assigned to program."
-    And I should see "1 errors detected when assigning programs."
+    Then I should see "1 users were allocated to program."
+    And I should see "2 users were already allocated to program."
+    And I should see "1 errors detected when allocating programs."
     And "Student 1" row "Source" column of "reportbuilder-table" table should contain "Manual allocation"
     And "Student 2" row "Source" column of "reportbuilder-table" table should contain "Manual allocation"
     And "Student 3" row "Source" column of "reportbuilder-table" table should contain "Manual allocation"
@@ -246,8 +246,8 @@ Feature: Manual program allocation tests
       | User mapping via           | ID number |
       | First line is header       | 1         |
     And I press dialog form button "Upload allocations"
-    Then I should see "1 users were assigned to program."
-    And I should see "1 users were already assigned to program."
+    Then I should see "1 users were allocated to program."
+    And I should see "1 users were already allocated to program."
     And "Student 1" row "Source" column of "reportbuilder-table" table should contain "Manual allocation"
     And "Student 2" row "Source" column of "reportbuilder-table" table should contain "Manual allocation"
     And "Student 3" row "Source" column of "reportbuilder-table" table should contain "Manual allocation"
@@ -303,8 +303,8 @@ Feature: Manual program allocation tests
       | Time due column            | duedate            |
       | Time end column            | enddate            |
     And I press dialog form button "Upload allocations"
-    Then I should see "3 users were assigned to program."
-    And I should see "3 errors detected when assigning programs."
+    Then I should see "3 users were allocated to program."
+    And I should see "3 errors detected when allocating programs."
     Then the following should exist in the "reportbuilder-table" table:
       | First name          | Program start   | Due date        | Program end     | Source            |
       | Student 1           | 5/11/22, 09:00  | 22/01/23, 09:00 | 31/12/23, 09:00 | Manual allocation |
