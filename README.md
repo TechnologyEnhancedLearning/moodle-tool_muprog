@@ -1,3 +1,16 @@
+## MSSQL Compatibility Patch
+
+This fork includes fixes to make the plugin compatible with Microsoft SQL Server.
+
+### Changes made:
+- Renamed reserved column `public` to `ispublic`
+- Updated `install.xml` and upgrade steps
+- Removed `tool_mulib` MSSQL block from `environment.xml`
+
+> ⚠️ This fork is **not officially supported** by the original authors. Use with caution in production environments.
+
+
+
 # Programs plugin for Moodle™ LMS
 
 ![Moodle Plugin CI](https://github.com/mutms/moodle-tool_muprog/actions/workflows/moodle-ci.yml/badge.svg)
