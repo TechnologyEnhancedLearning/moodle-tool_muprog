@@ -67,7 +67,7 @@ final class get_programs extends external_api {
             ['fieldvalues' => $fieldvalues]
         );
 
-        $allowedfieldlist = ['id', 'contextid', 'fullname', 'idnumber', 'public', 'archived', 'tenantid'];
+        $allowedfieldlist = ['id', 'contextid', 'fullname', 'idnumber', 'ispublic', 'archived', 'tenantid'];
         $params = [];
         $where = [];
         $tenantjoin = '';
@@ -153,7 +153,7 @@ final class get_programs extends external_api {
                 'description' => new external_value(PARAM_RAW, 'Program description text (in original text format)'),
                 'descriptionformat' => new external_value(PARAM_INT, 'Program description text format'),
                 'presentationjson' => new external_value(PARAM_RAW, 'Presentation json (not stable internal API data)'),
-                'public' => new external_value(PARAM_BOOL, 'Public flag'),
+                'ispublic' => new external_value(PARAM_BOOL, 'Public flag'),
                 'archived' => new external_value(PARAM_BOOL, 'Archived flag (archived problems do not change)'),
                 'creategroups' => new external_value(PARAM_BOOL, 'Create course groups flag'),
                 'timeallocationstart' => new external_value(PARAM_INT, 'Allocation start date'),

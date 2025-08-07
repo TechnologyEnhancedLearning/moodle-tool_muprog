@@ -120,7 +120,7 @@ final class program {
         $data->presentationjson = util::json_encode([]);
         unset($data->presentation);
 
-        $data->public = isset($data->public) ? (int)(bool)$data->public : 0;
+        $data->ispublic = isset($data->ispublic) ? (int)(bool)$data->ispublic : 0;
         $data->archived = isset($data->archived) ? (int)(bool)$data->archived : 0;
         $data->creategroups = isset($data->creategroups) ? (int)(bool)$data->creategroups : 0;
         if (empty($data->timeallocationstart)) {
@@ -518,7 +518,7 @@ final class program {
 
         if (
             (isset($data->cohortids) && !is_array($data->cohortids))
-            || empty($data->id) || !isset($data->public)
+            || empty($data->id) || !isset($data->ispublic)
         ) {
             throw new \coding_exception('Invalid data');
         }
@@ -531,8 +531,8 @@ final class program {
 
         $oldprogram = $DB->get_record('tool_muprog_program', ['id' => $data->id], '*', MUST_EXIST);
 
-        if ($oldprogram->public != $data->public) {
-            $DB->set_field('tool_muprog_program', 'public', (int)(bool)$data->public, ['id' => $data->id]);
+        if ($oldprogram->ispublic != $data->ispublic) {
+            $DB->set_field('tool_muprog_program', 'ispublic', (int)(bool)$data->ispublic, ['id' => $data->id]);
         }
 
         if (isset($data->cohortids)) {
