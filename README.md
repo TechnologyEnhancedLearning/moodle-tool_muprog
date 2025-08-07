@@ -2,7 +2,7 @@
 
 This fork includes fixes to make the plugin compatible with Microsoft SQL Server.
 
-> ⚠️ This fork includes MSSQL compatibility fixes. See [wiki](https://github.com/TechnologyEnhancedLearning/moodle-tool_muprog/wiki) for details.
+> ⚠️ This fork includes MSSQL compatibility fixes. See [wiki](https://github.com/TechnologyEnhancedLearning/moodle-tool_muprog/wiki/MSSQL-Compatibility-Notes) for details.
 
 
 
