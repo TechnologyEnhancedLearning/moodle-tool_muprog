@@ -286,7 +286,7 @@ final class catalogue {
              LEFT JOIN {tool_muprog_allocation} pa ON pa.programid = p.id AND pa.userid = :userid1 AND pa.archived = 0
                   $tenantjoin
                  WHERE p.archived = 0 $searchwhere
-                       AND (p.public = 1 OR pa.id IS NOT NULL OR EXISTS (
+                       AND (p.ispublic = 1 OR pa.id IS NOT NULL OR EXISTS (
                             SELECT cm.id
                               FROM {cohort_members} cm
                               JOIN {tool_muprog_cohort} pc ON pc.cohortid = cm.cohortid
@@ -387,7 +387,7 @@ final class catalogue {
                   JOIN {tool_muprog_program} p ON p.id = tt.itemid
              LEFT JOIN {tool_muprog_allocation} pa ON pa.programid = p.id AND pa.userid = :userid1 AND pa.archived = 0
                  WHERE p.archived = 0
-                       AND (p.public = 1 OR pa.id IS NOT NULL OR EXISTS (
+                       AND (p.ispublic = 1 OR pa.id IS NOT NULL OR EXISTS (
                             SELECT cm.id
                               FROM {cohort_members} cm
                               JOIN {tool_muprog_cohort} pc ON pc.cohortid = cm.cohortid
@@ -421,7 +421,7 @@ final class catalogue {
                   JOIN {tag_instance} tt ON tt.itemid = p.id AND tt.itemtype = 'program' AND tt.tagid = :tagid AND tt.component = 'tool_muprog'
              LEFT JOIN {tool_muprog_allocation} pa ON pa.programid = p.id AND pa.userid = :userid1 AND pa.archived = 0
                  WHERE p.archived = 0
-                       AND (p.public = 1 OR pa.id IS NOT NULL OR EXISTS (
+                       AND (p.ispublic = 1 OR pa.id IS NOT NULL OR EXISTS (
                              SELECT cm.id
                                FROM {cohort_members} cm
                                JOIN {tool_muprog_cohort} pc ON pc.cohortid = cm.cohortid

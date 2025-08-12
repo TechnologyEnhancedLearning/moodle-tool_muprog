@@ -52,7 +52,7 @@ $PAGE->set_url($currenturl);
 
 $current = new stdClass();
 $current->id = $program->id;
-$current->public = $program->public;
+$current->ispublic = $program->ispublic;
 
 $form = new \tool_muprog\local\form\program_visibility_edit(null, ['data' => $current, 'context' => $context]);
 

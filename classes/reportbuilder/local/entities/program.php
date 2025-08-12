@@ -121,13 +121,13 @@ final class program extends base {
             });
 
         $columns[] = (new column(
-            'public',
+            'ispublic',
             new lang_string('public', 'tool_muprog'),
             $this->get_entity_name()
         ))
             ->add_joins($this->get_joins())
             ->set_type(column::TYPE_BOOLEAN)
-            ->add_fields("{$programalias}.public, {$programalias}.id, {$programalias}.contextid")
+            ->add_fields("{$programalias}.ispublic, {$programalias}.id, {$programalias}.contextid")
             ->set_is_sortable(true)
             ->set_callback([format::class, 'boolean_as_text'])
             ->add_callback(static function (string $value, \stdClass $row): string {
@@ -278,10 +278,10 @@ final class program extends base {
 
         $filters[] = (new filter(
             boolean_select::class,
-            'public',
+            'ispublic',
             new lang_string('public', 'tool_muprog'),
             $this->get_entity_name(),
-            "{$programalias}.public"
+            "{$programalias}.ispublic"
         ))
             ->add_joins($this->get_joins());
 

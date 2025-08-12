@@ -38,9 +38,9 @@ final class program_visibility_edit extends \tool_mulib\local\ajax_form {
         $data = $this->_customdata['data'];
         $context = $this->_customdata['context'];
 
-        $mform->addElement('select', 'public', get_string('public', 'tool_muprog'), [0 => get_string('no'), 1 => get_string('yes')]);
-        $mform->setDefault('public', $data->public);
-        $mform->addHelpButton('public', 'public', 'tool_muprog');
+        $mform->addElement('select', 'ispublic', get_string('public', 'tool_muprog'), [0 => get_string('no'), 1 => get_string('yes')]);
+        $mform->setDefault('ispublic', $data->ispublic);
+        $mform->addHelpButton('ispublic', 'public', 'tool_muprog');
 
         form_program_visibility_edit_cohortids::add_form_element(
             $mform,

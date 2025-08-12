@@ -36,7 +36,7 @@ function xmldb_tool_muprog_upgrade($oldversion): bool {
     global $DB;
 
     $dbman = $DB->get_manager();
-
+    
     if ($oldversion < 2025042200) {
         $table = new xmldb_table('tool_muprog_prg_snapshot');
         if ($dbman->table_exists($table)) {
@@ -65,5 +65,18 @@ function xmldb_tool_muprog_upgrade($oldversion): bool {
         upgrade_plugin_savepoint(true, 2025052300, 'tool', 'muprog');
     }
 
+    if ($oldversion < 2025080546) {
+        $table = new xmldb_table('tool_muprog_program');
+        $field = new xmldb_field('public');
+        
+        // Only rename if it exists.
+        if ($dbman->field_exists($table, $field)) {
+            $newfield = new xmldb_field('public', XMLDB_TYPE_INTEGER, '1', null, XMLDB_NOTNULL, null, '0');
+            $dbman->rename_field($table, $newfield, 'ispublic');
+        }
+
+        upgrade_plugin_savepoint(true, 2025080546, 'tool', 'muprog');
+    }
+        
     return true;
 }
